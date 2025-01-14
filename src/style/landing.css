@@ -1,0 +1,25 @@
+.landing {
+    background-image: url('../assets/background.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .landing {
+        height: 70vh; 
+        padding: 1rem;
+        background-position: top;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing{
+        height: 60vh;
+        padding: 0.5rem;
+        text-align: center; /* Center text for better readability */
+    }
+}
