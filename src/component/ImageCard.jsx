@@ -19,30 +19,21 @@ const ImageCard = ({displayData,insideCategory,setDeleteProductFromImagecard}) =
 
 
  
-  let cart = [];
+  
   const addCart = async () => {
-    const { id, name, imageUrl, price } = displayData; // Include `id` from displayData
-    const cartDetails = { id, name, imageUrl, price }; // Ensure `id` is part of cartDetails for checking
+    const {name, imageUrl, price } = displayData; 
+    const cartDetails = {name, imageUrl, price }; 
 
-    // Check if the product is already in the cart
-    const isProductInCart = allCart.some(item => item.id === cartDetails.id);
-
-    if (isProductInCart) {
-        alert("Product already in cart");
-    } else {
         try {
-            await saveCartAPI(cartDetails); // Add product to cart via API
-            cart.push(cartDetails); // Add to local cart array (optional, update state as needed)
+            await saveCartAPI(cartDetails); 
+           
             alert("Product added to cart!!!");
         } catch (err) {
             console.log(err);
         }
     }
-};
 
-  const heart =async ()=>{
-    
-  }
+
 
   const deleteProduct = async (id)=>{
     try {

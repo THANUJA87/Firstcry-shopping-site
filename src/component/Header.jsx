@@ -37,10 +37,10 @@ const Header = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto text-center text-lg-start">
-                <Nav.Link href='/home'>Home</Nav.Link>
-                 <Nav.Link onClick={handleShow} href="#"><i class="fa-solid fa-user"></i></Nav.Link>
-                <Nav.Link href='/cart'><i class="fa-solid fa-cart-shopping fs-4"></i></Nav.Link>
-              </Nav>
+                <Link className='text-white mx-2' to={'/home'} style={{textDecoration:'none'}}>Home</Link>
+                <Link className='text-white mx-2' onClick={handleShow}  href="#"><i class="fa-solid fa-user"></i></Link>
+                <Link className='text-white mx-2' to={'/cart'} style={{textDecoration:'none'}}><i class="fa-solid fa-cart-shopping fs-4"></i></Link>
+               </Nav>
             </Navbar.Collapse>
           </Container>
 

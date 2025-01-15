@@ -11,6 +11,7 @@ const Cart = () => {
   useEffect(()=>{
     getAllCart()
   },[])
+  
   const  removeCart = async (id) =>{
     try {
       await  deleteCartAPI(id)

@@ -4,7 +4,7 @@ import logo from '../assets/logo.png';
 
 function Footer() {
   return (
-    <footer className="bg-primary text-light py-3">
+    <footer className="bg-primary text-light  py-5">
       <div className="d-flex flex-column flex-md-row justify-content-between px-3 px-md-5">
         {/* Intro */}
         <div style={{ width: '100%', maxWidth: '400px' }} className="mb-3 mt-3">
