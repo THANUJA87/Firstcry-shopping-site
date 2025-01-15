@@ -95,70 +95,87 @@ const Category = ({setDeleteResponseFromCategory,deleteResponseFromView}) => {
 
   return (
    <>
-   
-     <div className='  '>
-    
-        <button onClick={handleShow}  className='btn btn-primary  fw-bolder ms-3 fs-5 mb-3'>Favourites +</button>
-      </div>
-
-     <div className=' container-fluid mb-3 '>  
-
-       {
-        allCategory?.length >0 ?
-
-          allCategory?.map(categorydetails => (
-            <div droppable="true" onDragOver={dargOverCategory} onDrop={e=>imageCardDropOverCategory(e,categorydetails)} key={categorydetails?.id} className='border rounded p-3 mb-3'>
-            <div className='d-flex justify-content-between'>
-              <h5>{categorydetails?.categoryName} </h5>
-              <button onClick={() => removeCategory(categorydetails?.id)} className='btn'><i class="fa-solid fa-trash text-danger"></i> </button>
-
+          
+          <div className="d-flex flex-wrap justify-content-end">
+          <button
+            onClick={handleShow}
+            className="btn btn-primary fw-bolder ms-md-3 fs-5 mb-3"
+          >
+            Favourites +
+          </button>
+        </div>
+        <div className="container-fluid mb-3">
+          {allCategory?.length > 0 ? (
+            allCategory?.map((categorydetails) => (
+              <div
+                droppable="true"
+                onDragOver={dargOverCategory}
+                onDrop={(e) => imageCardDropOverCategory(e, categorydetails)}
+                key={categorydetails?.id}
+                className="border rounded p-3 mb-3"
+              >
+                <div className="d-flex justify-content-between align-items-center">
+                  <h5 className="mb-0">{categorydetails?.categoryName}</h5>
+                  <button
+                    onClick={() => removeCategory(categorydetails?.id)}
+                    className="btn p-0"
+                  >
+                    <i className="fa-solid fa-trash text-danger"></i>
+                  </button>
+                </div>
+                <div className="row mt-2">
+                  {categorydetails?.allProducts?.length > 0 &&
+                    categorydetails?.allProducts?.map((product) => (
+                      <div
+                        key={product?.id}
+                        className="col-12 col-sm-6 col-md-4 col-lg-4 ms-3 mb-3"
+                        draggable={true}
+                        onDragStart={(e) =>
+                          categoryProductDragStarted(e, product, categorydetails)
+                        }
+                      >
+                        <ImageCard insideCategory={true} displayData={product} />
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className="fw-bolder text-danger fs-5 text-center">
+              No Favourites are added yet !!!
             </div>
-            <div className='row mt-2 '>
-             {
-              categorydetails?.allProducts?.length >0 &&
-              categorydetails?.allProducts?.map(product =>(
-                <div key={product?.id} className='col-lg-4 ms-3' draggable={true}
-                onDragStart={e=> categoryProductDragStarted(e,product,categorydetails)}>
-                     <ImageCard  insideCategory ={true}  displayData={product} />
-                </div> 
-              ))
-             }
-
+          )}
+        </div>
+        <Modal
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>Favourite Products ! ! !</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="border rounded p-3">
+              <FloatingLabel controlId="floatingName" label="Category Name">
+                <Form.Control
+                  onChange={(e) => setCategoryName(e.target.value)}
+                  type="text"
+                  placeholder="Category Name"
+                />
+              </FloatingLabel>
             </div>
-            
-            
-          </div>
-          ))
-        
-        :
-        <div className='fw-bolder text-danger fs-5'>No Favourites are added yet !!!</div>
-       }
-    </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button onClick={handleSaveCategory} variant="primary">
+              Add
+            </Button>
+          </Modal.Footer>
+        </Modal>
 
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Favourite Products ! ! !</Modal.Title> 
-        </Modal.Header>
-        <Modal.Body>
-          <div className='border rounded p-3'>
-            <FloatingLabel controlId="floatingName" label="Category Name">
-            <Form.Control onChange={e=>setCategoryName(e.target.value)}  type="text" placeholder="Category Name" />
-            </FloatingLabel>
-          </div>
-         
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button onClick={handleSaveCategory} variant="primary" >Add</Button>
-        </Modal.Footer>
-      </Modal>
    </>
   )
 }

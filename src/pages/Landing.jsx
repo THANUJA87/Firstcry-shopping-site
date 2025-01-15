@@ -28,47 +28,49 @@ const Landing = () => {
         
         </Container>
       </div>
-      <div className='container mt-5'>
+      <div className='container mt-5 text-center'>
      
-        <h3 className='text-center fs-2 text-bold mb-5'>ESSENTIAL STORE</h3>
-        <Row>
-        <Col xs={12} sm={6} lg={4} className="mb-4">
-          <Card className="h-100" style={{ width: '18rem'}}>
-            <Card.Img variant="top" src={booties} style={{height:'350px'}}  />
-
-          </Card>
-        </Col>
-        <Col xs={12} sm={6} lg={4} className="mb-4">
-          <Card className="h-100" style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={hair} style={{height:'350px'}} />
-           
-          </Card>
-        </Col>
-        <Col xs={12} sm={6} lg={4} className="mb-4">
-          <Card className="h-100" style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={slips} style={{height:'350px'}} />
-          
-          </Card>
-        </Col>
-        <Col xs={12} sm={6} lg={4} className="mb-4">
-          <Card className="h-100" style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={watch}  style={{height:'350px'}}/>
-       
-          </Card>
-        </Col>
-        <Col xs={12} sm={6} lg={4} className="mb-4">
-          <Card className="h-100" style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={glass} style={{height:'350px'}} />
+       <div className='container  ' > 
+          <h3 className='text-center fs-2 text-bold mb-5'>ESSENTIAL STORE</h3>
+          <Row className=' mt-4' >
+          <Col xs={12} sm={6} md={6} lg={4} className="mb-4">
+            <Card className="h-100 d-flex justify-content-center" style={{ width: '18rem'}}>
+              <Card.Img variant="top" src={booties} style={{height:'350px'}}  />
+  
+            </Card>
+          </Col>
+          <Col xs={12} sm={6} lg={4} className="mb-4">
+            <Card className="h-100" style={{ width: '18rem' }}>
+              <Card.Img variant="top" src={hair} style={{height:'350px'}} />
+             
+            </Card>
+          </Col>
+          <Col xs={12} sm={6} lg={4} className="mb-4">
+            <Card className="h-100" style={{ width: '18rem' }}>
+              <Card.Img variant="top" src={slips} style={{height:'350px'}} />
+            
+            </Card>
+          </Col>
+          <Col xs={12} sm={6} lg={4} className="mb-4">
+            <Card className="h-100" style={{ width: '18rem' }}>
+              <Card.Img variant="top" src={watch}  style={{height:'350px'}}/>
          
-          </Card>
-        </Col>
-        <Col xs={12} sm={6} lg={4} className="mb-4">
-          <Card className="h-100" style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={vests} style={{height:'350px'}}/>
-    
-          </Card>
-        </Col>
-      </Row>
+            </Card>
+          </Col>
+          <Col xs={12} sm={6} lg={4} className="mb-4">
+            <Card className="h-100" style={{ width: '18rem' }}>
+              <Card.Img variant="top" src={glass} style={{height:'350px'}} />
+           
+            </Card>
+          </Col>
+          <Col xs={12} sm={6} lg={4} className="mb-4">
+            <Card className="h-100" style={{ width: '18rem' }}>
+              <Card.Img variant="top" src={vests} style={{height:'350px'}}/>
+      
+            </Card>
+          </Col>
+        </Row>
+       </div>
          <Container>
           <h3 className='text-center text-primary fs-1 mb-4'><span>GET READY FOR <br /> A MAGICAL TIME</span> </h3>
         <Carousel>

@@ -64,20 +64,26 @@ const View = ({addResponseFromHome,deleteResponseFromCategory,setDeleteResponseF
 
   return (
    <>
-    <Row droppable="true" onDragOver={dragOverView} onDrop={e =>categoryDragOverView(e)}  >
-     {
-      allProducts?.length>0 ?
-         allProducts.map(product => (
-          <Col key={product?.id}  sm={12} md={6} lg={4} >
-          <ImageCard setDeleteProductFromImagecard={setDeleteProductFromImagecard} displayData ={product}   />
-          </Col>
-         ))
-
-      :
-      <div className='fw-bolder text-danger'> No Product uploaded !!</div>
-     }
-   
-    </Row>
+        <Row 
+        droppable="true" 
+        onDragOver={dragOverView} 
+        onDrop={e => categoryDragOverView(e)} 
+      
+      >
+        {
+          allProducts?.length > 0 ? (
+            allProducts.map(product => (
+              <Col key={product?.id} xs={12} sm={6} md={4} lg={4} className='d-flex justify-content-center'>
+                <ImageCard setDeleteProductFromImagecard={setDeleteProductFromImagecard} displayData={product} />
+              </Col>
+            ))
+          ) : (
+            <div className="fw-bolder text-danger text-center">
+              No Product uploaded !!
+            </div>
+          )
+        }
+      </Row>
 
 
    </>

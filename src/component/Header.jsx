@@ -9,9 +9,15 @@ const Header = () => {
 
   const handleClose = () =>{
      setShow(false);
-     alert("Thank You for contacting with us !!")
+
   }
   const handleShow = () => setShow(true);
+  const submit=()=>{
+   
+    alert("Thank You for contacting with us !!")
+
+
+  }
 
   return (
       
@@ -44,20 +50,20 @@ const Header = () => {
               </Modal.Header>
               <Modal.Body>
                 <div className='border rounded p-3'>
-                      <FloatingLabel controlId="floatingInput" label="Name"className="mb-3">
+                      <FloatingLabel  controlId="floatingname" label="Name"className="mb-3">
                       <Form.Control type="text" placeholder="username" />
                       </FloatingLabel>
                       <FloatingLabel controlId="floatingInput" label="Email address"className="mb-3">
                       <Form.Control type="email" placeholder="name@example.com" />
                       </FloatingLabel>
                       <FloatingLabel controlId="floatingPassword" label="Message">
-                        <Form.Control type="text" placeholder="message" />
+                      <Form.Control type="text" placeholder="message" />
                       </FloatingLabel>
                     </div>
               </Modal.Body>
               <Modal.Footer>
-                <Button className='text-center' variant="primary" onClick={handleClose}>
-                  Submit
+                <Button className='text-center' variant="primary" onClick={submit}>
+                 Submit
                  </Button>
               </Modal.Footer>
             </Modal>
